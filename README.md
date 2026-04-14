@@ -1,6 +1,6 @@
-# SF-Research
+# SF-IC-Conditioner
 
-A template project for developing, researching, and backtesting trading signals.
+A template for you test the validity of a signal's disperion as an IC conditioner.
 
 ## 🚀 How to Use This Template
 #### To create your own repository using this template, follow these quick steps:
