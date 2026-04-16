@@ -11,7 +11,7 @@
 
 In quantitative finance, the Information Coefficient (IC) measures how well a signal predicts future stock returns. A common assumption in many models is that the IC is constant over time. However, in practice this is rarely true. The predictive strength of signals such as momentum or reversal often changes depending on market conditions. The goal of this project is to test whether the dispersion of a signal can be used to predict when the IC will be strong or weak.
 
-I tested momentum and reversal to see if they were valid IC conditioners; however, these results were not statistically significant. I am hopeful that someone who picks up this research might be able test accruals and some other possible signals using this framework.
+I tested momentum and reversal to see if they were valid IC conditioners; however, these results were not statistically significant. I am hopeful that someone who picks up this research might be able to test accruals and some other possible signals using this framework.
 
 ### Key Metrics
 
@@ -87,9 +87,9 @@ where:
 
 **Interpretation**
 
-If (θX,Y = 0): dispersion does not affect the signal’s IC
+If (θXY = 0): dispersion does not affect the signal’s IC
 
-If (θX,Y ≠ 0): dispersion helps predict when the signal will be more accurate
+If (θXY ≠ 0): dispersion helps predict when the signal will be more accurate
 
 In other words, the regression tests whether the IC of the signal is conditional on dispersion.
 
@@ -107,7 +107,7 @@ signal/
 
 ## Workflow
 
-### 1. **Test dispersion of one or more signals as a valid predictor of IC** (`create_signal.py`)
+### 1. **Test dispersion of one or more signals as a valid predictor of IC** (`run_IC_conditioner_regression.py`)
    - Input your exposures data and the scores and alphas for any signal you want to test as an IC conditioner.
    - Run the Python file and check the statistical significance of your interaction coefficient.
 
@@ -115,59 +115,30 @@ signal/
 
 ## 5. Results / Evaluation
 
-Include relevant evidence demonstrating performance.
+When I tested reversal and momentum to see if their dispersions could predict their respective IC's, I obtained the following results:
 
-For signals:
+<img src="images/final_results.jpg" width="400" height="300">
 
-- Cumulative IC table
-- Possibly quantile plots
-- Active portfolio backtest
-- Summary statistic tables
-- Other useful tables and plots
-
-Possible items:
-
-- Tables
-- Plots
-- Benchmarks
-
-Add anything useful for interpreting system behavior.
+Since the interaction coefficients (X*Yt as described above) for both momentum and reversal had low t-stats, we can conclude that neither of their dispersions can be used to predict the IC. However, this is the exact result we expected to see. This project was more about building the framework than obtaining significant results.
 
 ---
 
 ## 6. Performance Discussion
 
-Discuss:
+The primary strength of this project is that it is versatile; those who use this template can input any number of signals and test whether their dispersions can predict the signal IC's. 
 
-- Strengths
-- Weaknesses
-- Sensitivity to assumptions or parameters
+Unfortunately, a weakness of this project is that we don't know whether any signal can actually be used to predict the IC. This hypothesis that signal dispersion can be used to predict IC may never be proven or take a very long time to prove.
 
 ---
 
 ## 7. Limitations
 
-- Known issues:
-- Missing features:
-- Risks:
-- Open questions:
+The biggest limitation is that of obtaining data. While the exposures data is relatively easy to obtain from Barra, the score and alpha data is harder to find. If the selected signals aren't in production for Silver Fund, I'm not sure how one would get that signal's scores and alphas.
 
 ---
 
 ## 8. Future Work
 
-Ideas for improvement or continuation:
-
--  
--  
--  
+In talking to Brandon Bates, he determined that a potentially promising signal to test would be accruals. As I mentioned before, it might be difficult to get the accruals scores and alphas, but once they're obtained, the Python file will make it really easy to test whether accruals can condition the IC.
 
 ---
-
-## Appendix (Optional)
-
-### A. Additional Results
-
-### B. Experimental Details
-
-### C. Reproducibility Notes
