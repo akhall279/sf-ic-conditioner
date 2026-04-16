@@ -9,51 +9,42 @@
 
 ## 1. Summary
 
-Provide a brief overview of:
+In quantitative finance, the Information Coefficient (IC) measures how well a signal predicts future stock returns. A common assumption in many models is that the IC is constant over time. However, in practice this is rarely true. The predictive strength of signals such as momentum or reversal often changes depending on market conditions. The goal of this project is to test whether the dispersion of a signal can be used to predict when the IC will be strong or weak.
 
-- Research or development direction  
-- Core idea or system built
-- Key conclusions, takeaways, resulting actions
-- Most important performance or success metrics
+I tested momentum and reversal to see if they were valid IC conditioners; however, these results were not statistically significant. I am hopeful that someone who picks up this research might be able test accruals and some other possible signals using this framework.
 
 ### Key Metrics
 
-| Metric | Value | Notes |
-|------|------|------|
-| Primary Metric |  |  |
-| Secondary Metric |  |  |
-| Other |  |  |
+| Metric | Notes |
+|------|------|
+| Interaction Coefficient | Indicates the relationship between a signal's alpha and its dispersion |
+| T-Stat of Interaction Coefficient | Indicates the statistical significance of the interaction coefficient |
 
 ## 2. Data Requirements
 
 Describe data dependencies.
 
-**Sources**
--  
+**Sources/Inputs Required**
+-  Exposures Matrix
+-  Scores for your signal(s)
+-  Alphas for your signal(s)
 
 **Rate of Availability**
--  
-
-**Inputs Required**
--  
+-  I just asked the Silver Fund leaders to get all of this above data from production; they have information for reversal, momentum, beta, ivol, barra_momentum, and barra_reversal.
+-  However, if you are using a different signal, you will have to do some digging and search for the data on your own.
 
 **Preprocessing**
--  
- 
+-  Filter out any signals that you don't want to test if your scores and alphas files contain extra signals.
 
 ---
 
 ## 3. Approach / System Design
 
-Describe what was built or tested.
+The idea behind dispersion is simple.
+If a signal has low dispersion, then most stocks look very similar. Nothing stands out clearly as a strong buy or a strong sell. In that situation, the signal may mostly reflect noise, so we expect the IC to be weak.
+If a signal has high dispersion, then some stocks clearly stand out from the rest. There is a stronger structure in the cross-section, and the signal is more informative. In this case, we expect the IC to be stronger.
+<img width="468" height="164" alt="image" src="https://github.com/user-attachments/assets/348ec647-08f2-4e46-bee1-723388c0bcd5" />
 
-Possible topics:
-
-- Conceptual idea or economic intuition  
-- Model, system, or architecture  
-- Algorithms used  
-- Design decisions  
-- Tradeoffs considered  
 
 ---
 
