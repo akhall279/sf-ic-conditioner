@@ -87,9 +87,9 @@ where:
 
 **Interpretation**
 
-If (θX,Y  = 0): dispersion does not affect the signal’s IC
+If (θX,Y = 0): dispersion does not affect the signal’s IC
 
-If (θX,Y  ≠ 0): dispersion helps predict when the signal will be more accurate
+If (θX,Y ≠ 0): dispersion helps predict when the signal will be more accurate
 
 In other words, the regression tests whether the IC of the signal is conditional on dispersion.
 
