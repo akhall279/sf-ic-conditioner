@@ -43,8 +43,14 @@ Describe data dependencies.
 The idea behind dispersion is simple.
 If a signal has low dispersion, then most stocks look very similar. Nothing stands out clearly as a strong buy or a strong sell. In that situation, the signal may mostly reflect noise, so we expect the IC to be weak.
 If a signal has high dispersion, then some stocks clearly stand out from the rest. There is a stronger structure in the cross-section, and the signal is more informative. In this case, we expect the IC to be stronger.
-<img width="468" height="164" alt="image" src="https://github.com/user-attachments/assets/348ec647-08f2-4e46-bee1-723388c0bcd5" />
 
+A key issue with raw dispersion is that it can be misleading. If one industry has high momentum and another has low momentum, the signal may appear very spread out even though stocks are actually very similar within each industry. In that case, the predictive power may come from industry trends rather than true stock-level information.
+To address this, we construct a dispersion measure that focuses on dispersion within industries instead of across the entire market.
+The dispersion signal is built in four steps:
+1. Within-industry standardization
+For stock (j) at time (t),
+ 
+<img width="468" height="360" alt="image" src="https://github.com/user-attachments/assets/46278262-ef79-4173-99c8-2b086ef796dd" />
 
 ---
 
