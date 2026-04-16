@@ -72,6 +72,7 @@ Finally, we normalize dispersion using an EWM mean and standard deviation:
 This produces a standardized time-series that tells us whether dispersion is currently high or low relative to its historical level.
 
 **Testing Our Hypothesis**
+
 To test whether dispersion helps predict the IC, we run the regression
 
 <img src="images/regression.jpg" width="400" height="300">
@@ -82,7 +83,7 @@ where:
 
 (Yt) = the dispersion measure defined above
 
-(X Yt) = interaction term used to test whether the predictive power of the signal changes when dispersion changes
+(X*Yt) = interaction term used to test whether the predictive power of the signal changes when dispersion changes
 
 **Interpretation**
 
