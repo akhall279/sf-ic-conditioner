@@ -13,22 +13,21 @@ signal/
 ## Workflow
 
 ### 1. **Test dispersion of one or more signals as a valid predictor of IC** (`create_signal.py`)
-   - Input your 
+   - Input your exposures data and the scores and alphas for any signal you want to test as an IC conditioner.
+   - Run the Python file and check the statistical significance of your interaction coefficient.
 
-## Data Files
+## Data Files You Will Need
 
-All data files are stored in the `data/` directory:
-
-- **`data/signal.parquet`**: Output from `create_signal.py`
-  - Columns: `date`, `barrid`, `alpha` (your signal), `signal`
+- **`exposures/exposures_*.parquet`**:
+  - Columns: 'date', 'barrid', style exposures, and industry exposures
   - Format: Parquet (AlphaSchema)
 
-- **`data/weights/*.parquet`**: Output from backtest
-  - Contains: Portfolio weights and performance data
+- **`alphas/alphas.parquet`**:
+  - Columns: 'date', 'barrid', 'signal_name', and 'alpha'
+  - Format: Parquet
+
+- **`scores/scores.parquet`**:
+  - Columns: 'date', 'barrid', 'signal_name', and 'score'
   - Format: Parquet
 
 ---
-
-**Note**: This is a template project. Customize `src/signal/create_signal.py` with your unique signal logic, then use the workflow above to backtest your ideas.
-
-
