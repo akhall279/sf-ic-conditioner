@@ -76,14 +76,20 @@ To test whether dispersion helps predict the IC, we run the regression
 
 <img src="images/regression.jpg" width="400" height="300">
 
-where
+where:
+
 (X) = the signal forecast (momentum or reversal)
-(Yt) = the dispersion measure defined above,
-(X Yt) = interaction term used to test whether the predictive power of the signal changes when dispersion changes.
+
+(Yt) = the dispersion measure defined above
+
+(X Yt) = interaction term used to test whether the predictive power of the signal changes when dispersion changes
 
 **Interpretation**
+
 If (θX,Y  = 0): dispersion does not affect the signal’s IC
+
 If (θX,Y  ≠ 0): dispersion helps predict when the signal will be more accurate
+
 In other words, the regression tests whether the IC of the signal is conditional on dispersion.
 
 ---
