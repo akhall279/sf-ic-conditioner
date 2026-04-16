@@ -52,6 +52,37 @@ For stock (j) at time (t),
  
 <img src="images/1zscore.jpg" width="400" height="300">
 
+2. Within-industry dispersion
+For each industry (i), compute the dispersion of the standardized signal:
+
+<img src="images/2within_indus_std.jpg" width="400" height="300">
+
+3. Cross-industry average dispersion
+
+<img src="images/3avg_disp_all_inds.jpg" width="400" height="300">
+
+This gives one dispersion number for the entire market at time (t).
+4. IC-conditioner (standardized dispersion)
+Finally, we normalize dispersion using an EWM mean and standard deviation:
+
+<img src="images/4normalized_dispersion.jpg" width="400" height="300">
+
+This produces a standardized time-series that tells us whether dispersion is currently high or low relative to its historical level.
+
+Testing Our Hypothesis
+To test whether dispersion helps predict the IC, we run the regression
+
+<img src="images/regression.jpg" width="400" height="300">
+
+where
+•	(X) = the signal forecast (momentum or reversal),
+•	(Yt) = the dispersion measure defined above,
+•	(X Yt) = interaction term used to test whether the predictive power of the signal changes when dispersion changes.
+Interpretation
+•	If (θX,Y  = 0): dispersion does not affect the signal’s IC
+•	If (θX,Y  ≠ 0): dispersion helps predict when the signal will be more accurate
+In other words, the regression tests whether the IC of the signal is conditional on dispersion.
+
 ---
 
 ## 4. Code Structure
