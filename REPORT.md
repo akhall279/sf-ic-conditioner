@@ -100,72 +100,16 @@ In other words, the regression tests whether the IC of the signal is conditional
 If signal research:
 
 ```
-sf-signal/
-├── src/
-│   ├── framework/
-│   │   ├── ew_dash.py            # Equal-weight dashboard (do not edit)
-│   │   ├── opt_dash.py           # Optimal portfolio dashboard (do not edit)
-│   │   └── run_backtest.py       # Run the backtest (edit config only)
-│   └── signal/
-│       └── create_signal.py      # Your signal implementation (edit this)
-├── data/
-│   ├── signal.parquet            # Output: Your signal
-│   └── weights/                  # Output: Backtest weights
-└── README.md
-```
-
-### 1. **Implement Signal** (`create_signal.py`)
-   - Customize date ranges, data columns, and calculation logic
-   - Develop your signal logic
-   - Saves signal to `data/signal.parquet`
-
-   ```bash
-   make create-signal
-   ```
-
-### 2. **View Equal-Weight Performance** (`ew_dash.py`)
-   - Compare your signal against an equal-weight baseline
-   - Analyze signal characteristics
-   - Visualize signal properties and performance
-
-   ```bash
-   make ew-dash
-   ```
-
-### 3. **Run Backtest** (`run_backtest.py`)
-   - Run MVO-based backtest on your signal
-   - Generates optimal portfolio weights
-   - Saves results to `data/weights.parquet`
-
-   ```bash
-   make backtest
-   ```
-
-### 4. **View Optimized Performance** (`opt_dash.py`)
-   - View optimized portfolio performance
-   - Analyze backtest returns, drawdowns, and metrics
-
-   ```bash
-   make opt-dash
-   ```
-
-If other than signal research, describe organization of implementation.
+signal/
+│   ├── run_IC_conditioner_regression.py # Test a signal's dispersion as an IC conditioner
 
 ```
-Example:
-project/
-├── data/
-├── src/
-├── scripts/
-├── results/
-└── docs/
-```
 
-Explain:
+## Workflow
 
-- Main pipeline or workflow
-- Important modules
-- Execution instructions
+### 1. **Test dispersion of one or more signals as a valid predictor of IC** (`create_signal.py`)
+   - Input your exposures data and the scores and alphas for any signal you want to test as an IC conditioner.
+   - Run the Python file and check the statistical significance of your interaction coefficient.
 
 ---
 
