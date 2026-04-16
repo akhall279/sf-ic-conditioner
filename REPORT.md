@@ -50,7 +50,7 @@ The dispersion signal is built in four steps:
 1. Within-industry standardization
 For stock (j) at time (t),
  
-<img width="468" height="360" alt="image" src="https://github.com/user-attachments/assets/46278262-ef79-4173-99c8-2b086ef796dd" />
+
 
 ---
 
