@@ -47,6 +47,7 @@ If a signal has high dispersion, then some stocks clearly stand out from the res
 A key issue with raw dispersion is that it can be misleading. If one industry has high momentum and another has low momentum, the signal may appear very spread out even though stocks are actually very similar within each industry. In that case, the predictive power may come from industry trends rather than true stock-level information.
 To address this, we construct a dispersion measure that focuses on dispersion within industries instead of across the entire market.
 The dispersion signal is built in four steps:
+
 1. Within-industry standardization
 For stock (j) at time (t),
  
@@ -62,6 +63,7 @@ For each industry (i), compute the dispersion of the standardized signal:
 <img src="images/3avg_disp_all_inds.jpg" width="400" height="300">
 
 This gives one dispersion number for the entire market at time (t).
+
 4. IC-conditioner (standardized dispersion)
 Finally, we normalize dispersion using an EWM mean and standard deviation:
 
@@ -69,18 +71,19 @@ Finally, we normalize dispersion using an EWM mean and standard deviation:
 
 This produces a standardized time-series that tells us whether dispersion is currently high or low relative to its historical level.
 
-Testing Our Hypothesis
+**Testing Our Hypothesis**
 To test whether dispersion helps predict the IC, we run the regression
 
 <img src="images/regression.jpg" width="400" height="300">
 
 where
-•	(X) = the signal forecast (momentum or reversal),
-•	(Yt) = the dispersion measure defined above,
-•	(X Yt) = interaction term used to test whether the predictive power of the signal changes when dispersion changes.
-Interpretation
-•	If (θX,Y  = 0): dispersion does not affect the signal’s IC
-•	If (θX,Y  ≠ 0): dispersion helps predict when the signal will be more accurate
+(X) = the signal forecast (momentum or reversal)
+(Yt) = the dispersion measure defined above,
+(X Yt) = interaction term used to test whether the predictive power of the signal changes when dispersion changes.
+
+**Interpretation**
+If (θX,Y  = 0): dispersion does not affect the signal’s IC
+If (θX,Y  ≠ 0): dispersion helps predict when the signal will be more accurate
 In other words, the regression tests whether the IC of the signal is conditional on dispersion.
 
 ---
