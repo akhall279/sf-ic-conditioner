@@ -1,9 +1,9 @@
 # Research Report
 
-**Project Title:**  
-**Author(s):**  
-**Date:**  
-**Version:**  
+**Project Title: Testing Signals as IC Conditioners**  
+**Author(s): Alyssa Hall**  
+**Date: 4/15/26**  
+**Version: 1**  
 
 ---
 
